@@ -50,7 +50,7 @@ F13 & y::SendInput(FormatTime(, "HH:mm"))              ; 22:49
 
 ; 日付と時刻の挿入(区切り文字なし)
 #HotIf GetKeyState("Alt", "P")
-F13 & t:: {
+F13 & y:: {
     SendInput("{Alt up}")
     SendInput(FormatTime(, "yyyyMMdd'T'HHmm")) ; 20260724T1430
 }
@@ -58,7 +58,7 @@ F13 & r:: {
     SendInput("{Alt up}")
     SendInput(FormatTime(, "yyyyMMdd")) ; 20260724
 }
-F13 & y:: {
+F13 & t:: {
     SendInput("{Alt up}")
     SendInput(FormatTime(, "HHmm")) ; 1430
 }
