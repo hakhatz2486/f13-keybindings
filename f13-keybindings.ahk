@@ -33,6 +33,23 @@ F13 & m::Volume_Mute      ; 音声をミュート
 F13 & WheelUp:: SoundSetVolume("+4")   ; 音量を上げる
 F13 & WheelDown:: SoundSetVolume("-4") ; 音量を下げる
 
+; タブ・ウィンドウ切り替え(ホイール)
+#HotIf GetKeyState("Shift", "P")
+F13 & WheelDown:: {
+    Send("{Shift up}")
+    Send("^{Tab}")  ; Ctrl + Tab: 次のタブ
+}
+F13 & WheelUp:: {
+    Send("{Shift up}")
+    Send("^+{Tab}") ; Ctrl + Shift + Tab: 前のタブ
+}
+#HotIf
+
+#HotIf GetKeyState("Alt", "P")
+F13 & WheelDown::Send("{Blind}{Tab}")  ; Alt + Tab: 次のウィンドウ
+F13 & WheelUp::Send("{Blind}+{Tab}")   ; Alt + Shift + Tab: 前のウィンドウ
+#HotIf
+
 ; Lockキー
 #HotIf GetKeyState("Shift", "P")
 F13 & c::Send("{Blind}+{CapsLock}")
