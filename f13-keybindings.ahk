@@ -8,8 +8,8 @@ F13 & l::Send("{Blind}{right}") ; →
 
 F13 & a::Send("{Blind}^{left}")  ; Ctrl + ←
 F13 & d::Send("{Blind}^{right}") ; Ctrl + →
-F13 & q::Send("{Blind}{Home}") ; Home
-F13 & e::Send("{Blind}{End}")  ; End
+F13 & u::Send("{Blind}{Home}") ; Home
+F13 & o::Send("{Blind}{End}")  ; End
 F13 & w::Send("{Blind}{PgUp}") ; PageUp
 F13 & s::Send("{Blind}{PgDn}") ; PageDown
 
