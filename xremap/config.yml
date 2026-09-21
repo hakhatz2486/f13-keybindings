@@ -1,0 +1,68 @@
+modmap:
+  - name: CapsLock -> F13
+    remap:
+      CapsLock: F13
+
+virtual_modifiers:
+  - F13
+
+keymap:
+  - name: F13 combos
+    exact_match: true
+    remap:
+      # カーソル移動
+      F13-j: Left
+      F13-k: Down
+      F13-i: Up
+      F13-l: Right
+
+      F13-a: C-Left
+      F13-d: C-Right
+      F13-q: Home
+      F13-e: End
+      F13-w: PageUp
+      F13-s: PageDown
+
+      # エディタ: コードのフォーマット (Alt+Shift+F)
+      F13-f: A-Shift-F
+
+      # メディア操作
+      F13-p: KEY_PLAYPAUSE
+      F13-m: KEY_MUTE
+
+      # Lockキー
+      Shift-F13-c: Shift-Capslock
+      Shift-F13-n: KEY_NUMLOCK
+
+      # ブラウザ
+      F13-comma: A-Left
+      F13-dot: A-Right
+
+      # 日付と時刻の挿入(区切り文字あり)
+      # launchは起動後すぐ次のアクションに進むため、wl-copyの反映を待つsleepを挟む
+      F13-y:
+        - launch: ["bash", "-c", "date '+%Y-%m-%dT%H:%M' | wl-copy"]
+        - sleep: 100
+        - C-v
+      F13-r:
+        - launch: ["bash", "-c", "date '+%Y-%m-%d' | wl-copy"]
+        - sleep: 100
+        - C-v
+      F13-t:
+        - launch: ["bash", "-c", "date '+%H:%M' | wl-copy"]
+        - sleep: 100
+        - C-v
+
+      # 日付と時刻の挿入(区切り文字なし)
+      A-F13-y:
+        - launch: ["bash", "-c", "date '+%Y%m%dT%H%M' | wl-copy"]
+        - sleep: 100
+        - C-v
+      A-F13-r:
+        - launch: ["bash", "-c", "date '+%Y%m%d' | wl-copy"]
+        - sleep: 100
+        - C-v
+      A-F13-t:
+        - launch: ["bash", "-c", "date '+%H%M' | wl-copy"]
+        - sleep: 100
+        - C-v
