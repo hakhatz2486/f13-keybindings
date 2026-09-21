@@ -14,41 +14,7 @@ F13 & w::Send("{Blind}{PgUp}") ; PageUp
 F13 & s::Send("{Blind}{PgDn}") ; PageDown
 
 ; エディタ
-F13 & f::Send("{Blind}!+f") ; Alt + Shift + f: コードのフォーマット(VSCode方式)
-
-; 改行を削除してペースト
-F13 & v:: {
-    clipboardContent := A_Clipboard ; クリップボードの内容を取得
-
-    clipboardContent := StrReplace(clipboardContent, "`r`n", "") ; `r`nを空白文字に置換
-    clipboardContent := StrReplace(clipboardContent, "`n", "") ; `nを空白文字に置換
-
-    A_Clipboard := clipboardContent ; 整形したテキストをクリップボードに戻す
-    Send("+^v") ; Ctrl + Shift + v: ペーストを実行
-}
-
-; メディア操作
-F13 & p::Media_Play_Pause ; メディアの再生を停止
-F13 & m::Volume_Mute      ; 音声をミュート
-F13 & WheelUp:: SoundSetVolume("+4")   ; 音量を上げる
-F13 & WheelDown:: SoundSetVolume("-4") ; 音量を下げる
-
-; タブ・ウィンドウ切り替え(ホイール)
-#HotIf GetKeyState("Shift", "P")
-F13 & WheelDown:: {
-    Send("{Shift up}")
-    Send("^{Tab}")  ; Ctrl + Tab: 次のタブ
-}
-F13 & WheelUp:: {
-    Send("{Shift up}")
-    Send("^+{Tab}") ; Ctrl + Shift + Tab: 前のタブ
-}
-#HotIf
-
-#HotIf GetKeyState("Alt", "P")
-F13 & WheelDown::Send("{Blind}{Tab}")  ; Alt + Tab: 次のウィンドウ
-F13 & WheelUp::Send("{Blind}+{Tab}")   ; Alt + Shift + Tab: 前のウィンドウ
-#HotIf
+F13 & f::Send("{Blind}!+f") ; Alt + Shift + f: コードのフォーマット
 
 ; Lockキー
 #HotIf GetKeyState("Shift", "P")
