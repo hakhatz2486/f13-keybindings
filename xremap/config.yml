@@ -29,8 +29,8 @@ keymap:
       # メディア操作
       F13-p: KEY_PLAYPAUSE
       F13-m: KEY_MUTE
-      F13-semicolon: KEY_VOLUMEUP
-      F13-minus: KEY_VOLUMEDOWN
+      F13-leftbrace: KEY_VOLUMEUP
+      F13-rightbrace: KEY_VOLUMEDOWN
 
       # Lockキー
       Shift-F13-c: Shift-Capslock

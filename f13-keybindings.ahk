@@ -27,8 +27,8 @@ F13 & ,::Send("{Blind}!{Left}")  ; Alt + ←: 前のページ
 F13 & .::Send("{Blind}!{Right}") ; Alt + →: 次のページ
 
 ; 音量調整
-F13 & `;::Send("{Volume_Up}")
-F13 & -::Send("{Volume_Down}")
+F13 & [::Send("{Volume_Up}")
+F13 & ]::Send("{Volume_Down}")
 F13 & WheelUp:: SoundSetVolume("+4")   ; 音量を上げる
 F13 & WheelDown:: SoundSetVolume("-4") ; 音量を下げる
 
