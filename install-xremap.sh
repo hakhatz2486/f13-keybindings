@@ -13,7 +13,9 @@ cp "$SCRIPT_DIR/xremap/config.yml" "$CONFIG_DIR/config.yml"
 cp "$SCRIPT_DIR/xremap/xremap.service" "$SERVICE_DIR/xremap.service"
 
 systemctl --user daemon-reload
-systemctl --user enable --now xremap.service
+systemctl --user enable xremap.service
+# enable --nowは起動中の場合は再起動しないため、設定変更を確実に反映するためrestartを使う
+systemctl --user restart xremap.service
 
 echo "配置完了: $CONFIG_DIR/config.yml"
 echo "配置完了: $SERVICE_DIR/xremap.service"
