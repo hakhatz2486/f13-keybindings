@@ -34,6 +34,17 @@ keymap:
       F13-w: PageUp
       F13-s: PageDown
 
+      Shift-F13-q: Shift-Home
+      Shift-F13-e: Shift-End
+      C-F13-q: C-Home
+      C-F13-e: C-End
+      C-Shift-F13-q: C-Shift-Home
+      C-Shift-F13-e: C-Shift-End
+      Shift-F13-w: Shift-PageUp
+      Shift-F13-s: Shift-PageDown
+      C-F13-w: C-PageUp
+      C-F13-s: C-PageDown
+
       # エディタ: コードのフォーマット (Alt+Shift+F)
       F13-f: A-Shift-F
       # Ctrl押下時はAlt+Shift+Fに加えてCtrlも送る(AHK側はBlindで自動対応済みのためxremap側のみ追加)
