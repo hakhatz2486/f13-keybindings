@@ -8,11 +8,11 @@ CapsLockをF13キーとして扱い、それをショートカットキーとし
 
 - `f13-keybindings.ahk`: Windows、AutoHotkey v2使用
 - `xremap/`: Linux、xremap使用(GNOME Wayland環境前提)
-- `install-xremap.sh`: xremap設定ファイルとsystemdサービスファイルを`~/.config`配下に配置し、サービスを有効化・再起動するスクリプト
+- `xremap/install.sh`: xremap設定ファイルとsystemdサービスファイルを`~/.config`配下に配置し、サービスを有効化・再起動するスクリプト
 
 ## xremap設定を編集した場合の適用ルール
 
-`xremap/config.yml`または`xremap/xremap.service`を編集した後は、必ず`./install-xremap.sh`を実行して反映させること。このスクリプトは配置(`cp`)・`daemon-reload`・`restart`までを一括で行う。手動で`~/.config/xremap/config.yml`へコピーしたり、`systemctl --user restart`のみを個別に実行したりしない(配置漏れや再起動漏れで、リポジトリ上の修正が実環境に反映されない不具合を過去に起こしている)。
+`xremap/config.yml`または`xremap/xremap.service`を編集した後は、必ず`./xremap/install.sh`を実行して反映させること。このスクリプトは配置(`cp`)・`daemon-reload`・`restart`までを一括で行う。手動で`~/.config/xremap/config.yml`へコピーしたり、`systemctl --user restart`のみを個別に実行したりしない(配置漏れや再起動漏れで、リポジトリ上の修正が実環境に反映されない不具合を過去に起こしている)。
 
 ## xremap設定のキーバインド構造
 
@@ -30,4 +30,4 @@ AHK側の`{Blind}`(送信時に押下中の修飾キーをそのまま保持す�
 
 ## 動作確認
 
-このリポジトリにはビルド・テスト・lintの仕組みはない。xremap側の動作確認は、`install-xremap.sh`実行後に`systemctl --user status xremap`でサービスが起動しているかを確認する。
+このリポジトリにはビルド・テスト・lintの仕組みはない。xremap側の動作確認は、`xremap/install.sh`実行後に`systemctl --user status xremap`でサービスが起動しているかを確認する。

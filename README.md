@@ -18,7 +18,7 @@ GNOME Wayland環境を前提としています。
 
 1. xremap本体(gnome版)とGNOME拡張機能(`xremap@k0kubun.com`)を導入
 2. 日付時刻挿入機能のため`wl-clipboard`を導入(`sudo apt install wl-clipboard`)
-3. `./install-xremap.sh`を実行し、設定ファイルとサービスを配置・有効化
+3. `./xremap/install.sh`を実行し、設定ファイルとサービスを配置・有効化
 4. `input`グループへユーザーを追加(`sudo usermod -aG input $USER`)し、再ログインまたは再起動
 
 ### 注意点

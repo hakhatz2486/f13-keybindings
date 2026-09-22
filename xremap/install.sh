@@ -9,8 +9,8 @@ CONFIG_DIR="$HOME/.config/xremap"
 SERVICE_DIR="$HOME/.config/systemd/user"
 
 mkdir -p "$CONFIG_DIR" "$SERVICE_DIR"
-cp "$SCRIPT_DIR/xremap/config.yml" "$CONFIG_DIR/config.yml"
-cp "$SCRIPT_DIR/xremap/xremap.service" "$SERVICE_DIR/xremap.service"
+cp "$SCRIPT_DIR/config.yml" "$CONFIG_DIR/config.yml"
+cp "$SCRIPT_DIR/xremap.service" "$SERVICE_DIR/xremap.service"
 
 systemctl --user daemon-reload
 systemctl --user enable xremap.service
