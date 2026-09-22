@@ -26,6 +26,10 @@ F13 & n::Send("{Blind}{NumLock}")
 F13 & ,::Send("{Blind}!{Left}")  ; Alt + ←: 前のページ
 F13 & .::Send("{Blind}!{Right}") ; Alt + →: 次のページ
 
+; 音量調整
+F13 & `;::Send("{Volume_Up}")
+F13 & -::Send("{Volume_Down}")
+
 ; 日付と時刻の挿入(区切り文字あり)
 F13 & y::SendInput(FormatTime(, "yyyy-MM-dd'T'HH:mm")) ; 2026-07-18T22:49
 F13 & r::SendInput(FormatTime(, "yyyy-MM-dd"))         ; 2026-07-18
