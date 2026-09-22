@@ -29,6 +29,8 @@ F13 & .::Send("{Blind}!{Right}") ; Alt + →: 次のページ
 ; 音量調整
 F13 & `;::Send("{Volume_Up}")
 F13 & -::Send("{Volume_Down}")
+F13 & WheelUp:: SoundSetVolume("+4")   ; 音量を上げる
+F13 & WheelDown:: SoundSetVolume("-4") ; 音量を下げる
 
 ; 日付と時刻の挿入(区切り文字あり)
 F13 & y::SendInput(FormatTime(, "yyyy-MM-dd'T'HH:mm")) ; 2026-07-18T22:49
