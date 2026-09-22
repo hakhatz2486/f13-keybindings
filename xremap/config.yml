@@ -46,29 +46,30 @@ keymap:
 
       # 日付と時刻の挿入(区切り文字あり)
       # launchは起動後すぐ次のアクションに進むため、wl-copyの反映を待つsleepを挟む
+      # dateの出力には末尾改行が付くため、printfで除去してからwl-copyに渡す(そのまま渡すと貼り付け時に改行される)
       F13-y:
-        - launch: ["bash", "-c", "date '+%Y-%m-%dT%H:%M' | wl-copy"]
+        - launch: ["bash", "-c", "printf '%s' \"$(date '+%Y-%m-%dT%H:%M')\" | wl-copy"]
         - sleep: 100
         - C-v
       F13-r:
-        - launch: ["bash", "-c", "date '+%Y-%m-%d' | wl-copy"]
+        - launch: ["bash", "-c", "printf '%s' \"$(date '+%Y-%m-%d')\" | wl-copy"]
         - sleep: 100
         - C-v
       F13-t:
-        - launch: ["bash", "-c", "date '+%H:%M' | wl-copy"]
+        - launch: ["bash", "-c", "printf '%s' \"$(date '+%H:%M')\" | wl-copy"]
         - sleep: 100
         - C-v
 
       # 日付と時刻の挿入(区切り文字なし)
       A-F13-y:
-        - launch: ["bash", "-c", "date '+%Y%m%dT%H%M' | wl-copy"]
+        - launch: ["bash", "-c", "printf '%s' \"$(date '+%Y%m%dT%H%M')\" | wl-copy"]
         - sleep: 100
         - C-v
       A-F13-r:
-        - launch: ["bash", "-c", "date '+%Y%m%d' | wl-copy"]
+        - launch: ["bash", "-c", "printf '%s' \"$(date '+%Y%m%d')\" | wl-copy"]
         - sleep: 100
         - C-v
       A-F13-t:
-        - launch: ["bash", "-c", "date '+%H%M' | wl-copy"]
+        - launch: ["bash", "-c", "printf '%s' \"$(date '+%H%M')\" | wl-copy"]
         - sleep: 100
         - C-v
