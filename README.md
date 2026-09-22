@@ -25,3 +25,4 @@ GNOME Wayland環境を前提としています。
 
 - Windows側でChangeKeyで置き換えていたが`modmap`でF13に変換して扱っている
 - F13+ホイールでの音量調整のため、`xremap.service`は`--mouse`オプション付きでマウスデバイスも監視している
+- AHKの`{Blind}`(押下中の修飾キーを自動で保持する機能)に相当するものがxremapには無いため、Ctrl・Shiftなどとの組み合わせは`config.yml`内で個別に定義している
