@@ -2,13 +2,13 @@
 
 CapsLockをF13キーをショートカットキーとして使用するための設定集です。OSごとに実現方法が異なるため、ディレクトリを分けて管理しています。
 
-- `f13-keybindings.ahk`: Windows, AutoHotkey v2使用
+- `ahk/f13-keybindings.ahk`: Windows, AutoHotkey v2使用
 - `xremap/`: Linux、xremap使用
 
 ## Windows
 
 - ChangeKeyもしくはレジストリエディタでCapsLockをF13に置き換える
-- AutoHotkeyを導入し、`f13-keybindings.ahk`を実行
+- AutoHotkeyを導入し、`ahk/f13-keybindings.ahk`を実行
 
 ## Linux (xremap)
 

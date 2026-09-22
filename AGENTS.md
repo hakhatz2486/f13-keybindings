@@ -6,7 +6,7 @@
 
 CapsLockをF13キーとして扱い、それをショートカットキーとして使うための設定集。OSごとに実現方法が異なるため、以下のようにディレクトリ・ファイルを分けて管理している。
 
-- `f13-keybindings.ahk`: Windows、AutoHotkey v2使用
+- `ahk/f13-keybindings.ahk`: Windows、AutoHotkey v2使用
 - `xremap/`: Linux、xremap使用(GNOME Wayland環境前提)
 - `xremap/install.sh`: xremap設定ファイルとsystemdサービスファイルを`~/.config`配下に配置し、サービスを有効化・再起動するスクリプト
 
@@ -26,7 +26,7 @@ AHK側の`{Blind}`(送信時に押下中の修飾キーをそのまま保持す�
 
 ## Windows/Linux間の対称性
 
-`f13-keybindings.ahk`と`xremap/config.yml`は同じキーマッピングを提供するように対称に保たれている。一方のキーバインドを追加・変更する際は、もう一方にも対応する変更が必要か確認すること。
+`ahk/f13-keybindings.ahk`と`xremap/config.yml`は同じキーマッピングを提供するように対称に保たれている。一方のキーバインドを追加・変更する際は、もう一方にも対応する変更が必要か確認すること。
 
 ## 動作確認
 
