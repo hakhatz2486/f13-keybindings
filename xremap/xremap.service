@@ -4,7 +4,7 @@ After=graphical-session.target
 
 [Service]
 Environment=XDG_SESSION_TYPE=wayland
-ExecStart=%h/.local/bin/xremap --desktop gnome --watch=config --allow-launch true %h/.config/xremap/config.yml
+ExecStart=%h/.local/bin/xremap --desktop gnome --watch=config --allow-launch true --mouse %h/.config/xremap/config.yml
 Restart=on-failure
 
 [Install]

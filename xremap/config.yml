@@ -32,6 +32,9 @@ keymap:
       # JIS配列では物理[がKEY_RIGHTBRACE、物理]がKEY_BACKSLASHとして送信される
       F13-rightbrace: KEY_VOLUMEUP  # JIS配列: [
       F13-backslash: KEY_VOLUMEDOWN # JIS配列: ]
+      # ホイールでも音量調整できるようにする(要 xremap --mouse)
+      F13-xupscroll: KEY_VOLUMEUP
+      F13-xdownscroll: KEY_VOLUMEDOWN
 
       # Lockキー
       Shift-F13-c: Shift-Capslock
