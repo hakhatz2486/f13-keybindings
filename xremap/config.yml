@@ -16,6 +16,12 @@ keymap:
       F13-i: Up
       F13-l: Right
 
+      # AHK側はBlindで送信修飾キーを保持するため自動でAlt+矢印になるが、xremapのexact_matchには保持機能がなく組み合わせごとに明示が必要
+      A-F13-j: A-Left
+      A-F13-k: A-Down
+      A-F13-i: A-Up
+      A-F13-l: A-Right
+
       F13-a: C-Left
       F13-d: C-Right
       F13-q: Home
@@ -25,6 +31,8 @@ keymap:
 
       # エディタ: コードのフォーマット (Alt+Shift+F)
       F13-f: A-Shift-F
+      # Ctrl押下時はAlt+Shift+Fに加えてCtrlも送る(AHK側はBlindで自動対応済みのためxremap側のみ追加)
+      C-F13-f: C-A-Shift-F
 
       # メディア操作
       F13-p: KEY_PLAYPAUSE
