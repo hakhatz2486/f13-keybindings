@@ -22,6 +22,11 @@ keymap:
       A-F13-i: A-Up
       A-F13-l: A-Right
 
+      Shift-F13-j: Shift-Left
+      Shift-F13-k: Shift-Down
+      Shift-F13-i: Shift-Up
+      Shift-F13-l: Shift-Right
+
       F13-a: C-Left
       F13-d: C-Right
       F13-q: Home
