@@ -17,20 +17,20 @@ F13 & s::Send("{Blind}{PgDn}") ; PageDown
 F13 & f::Send("{Blind}!+f") ; Alt + Shift + f: コードのフォーマット
 
 ; Lockキー
-#HotIf GetKeyState("Shift", "P")
-F13 & c::Send("{Blind}+{CapsLock}")
+F13 & c::Send("{Blind}{CapsLock}")
 F13 & n::Send("{Blind}{NumLock}")
-#HotIf
 
 ; ブラウザ
 F13 & ,::Send("{Blind}!{Left}")  ; Alt + ←: 前のページ
 F13 & .::Send("{Blind}!{Right}") ; Alt + →: 次のページ
 
-; 音量調整
+; メディア
 F13 & [::Send("{Volume_Up}")
 F13 & ]::Send("{Volume_Down}")
 F13 & WheelUp:: SoundSetVolume("+4")   ; 音量を上げる
 F13 & WheelDown:: SoundSetVolume("-4") ; 音量を下げる
+F13 & m::Send("{Volume_Mute}")      ; ミュート切り替え
+F13 & p::Send("{Media_Play_Pause}") ; 再生停止切り替え
 
 ; 日付と時刻の挿入(区切り文字あり)
 F13 & y::SendInput(FormatTime(, "yyyy-MM-dd'T'HH:mm")) ; 2026-07-18T22:49
