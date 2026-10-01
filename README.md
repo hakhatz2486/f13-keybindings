@@ -1,33 +1,9 @@
 # f13-keybindings
 
-CapsLockをF13キーをショートカットキーとして使用するための設定集です。OSごとに実現方法が異なるため、ディレクトリを分けて管理しています。
+CapsLockをF13キーとして扱い、ショートカットキーとして使用するための設定集です。Windows専用で、AutoHotkey v2を使用します。
 
-- `ahk/f13-keybindings.ahk`: Windows, AutoHotkey v2使用
-- `xremap/`: Linux、xremap使用
 
-## Windows
+## セットアップ
 
-- ChangeKeyもしくはレジストリエディタでCapsLockをF13に置き換える
-- AutoHotkeyを導入し、`ahk/f13-keybindings.ahk`を実行
-
-### 注意点
-
-- F13+Spaceを押している間だけマウス速度を0.5倍にする機能はAHK側のみで、xremap側にはありません
-- メーカー製ドライバでトラックボールの感度を設定している場合、Windowsのマウス速度設定では効果が薄いことがあります
-
-## Linux (xremap)
-
-GNOME Wayland環境を前提としています。
-
-### セットアップ
-
-1. xremap本体(gnome版)とGNOME拡張機能(`xremap@k0kubun.com`)を導入
-2. 日付時刻挿入機能のため`wl-clipboard`を導入(`sudo apt install wl-clipboard`)
-3. `./xremap/install.sh`を実行し、設定ファイルとサービスを配置・有効化
-4. `input`グループへユーザーを追加(`sudo usermod -aG input $USER`)し、再ログインまたは再起動
-
-### 注意点
-
-- Windows側でChangeKeyで置き換えていたが`modmap`でF13に変換して扱っている
-- F13+ホイールでの音量調整のため、`xremap.service`は`--mouse`オプション付きでマウスデバイスも監視している
-- AHKの`{Blind}`(押下中の修飾キーを自動で保持する機能)に相当するものがxremapには無いため、Ctrl・Shiftなどとの組み合わせは`config.yml`内で個別に定義している
+- Change KeyもしくはレジストリエディタでCapsLockをF13に置き換える
+- AutoHotkeyを導入し、`f13-keybindings.ahk`を実行
