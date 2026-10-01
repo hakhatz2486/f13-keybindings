@@ -10,6 +10,11 @@ CapsLockをF13キーをショートカットキーとして使用するための
 - ChangeKeyもしくはレジストリエディタでCapsLockをF13に置き換える
 - AutoHotkeyを導入し、`ahk/f13-keybindings.ahk`を実行
 
+### 注意点
+
+- F13+Spaceを押している間だけマウス速度を0.5倍にする機能はAHK側のみで、xremap側にはありません
+- メーカー製ドライバでトラックボールの感度を設定している場合、Windowsのマウス速度設定では効果が薄いことがあります
+
 ## Linux (xremap)
 
 GNOME Wayland環境を前提としています。
