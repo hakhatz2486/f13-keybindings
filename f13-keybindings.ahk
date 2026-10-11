@@ -34,7 +34,8 @@ F13 & m::Send("{Volume_Mute}")      ; ミュート切り替え
 F13 & p::Send("{Media_Play_Pause}") ; 再生停止切り替え
 
 ; マウス
-F13 & Space:: {
+; F13は組み合わせの前置キーなので、単独のF13::は離したときにしか発火しない。~を付けると押した瞬間に発火する
+~F13:: {
     ; 押下ごとに現在の速度を取得するため、通常感度をWindows側で変更しても追従する
     speed := 0
     DllCall("SystemParametersInfo", "UInt", 0x70, "UInt", 0, "UInt*", &speed, "UInt", 0) ; SPI_GETMOUSESPEED
@@ -42,7 +43,7 @@ F13 & Space:: {
         ; SPI_SETMOUSESPEEDはpvParamにポインタではなく値そのものを渡す仕様。速度の最小値は1
         ; fWinIniを0にしてレジストリへ保存しない。スクリプトが異常終了しても再ログインで元に戻る
         DllCall("SystemParametersInfo", "UInt", 0x71, "UInt", 0, "Ptr", Max(1, Round(speed * 0.5)), "UInt", 0) ; SPI_SETMOUSESPEED
-        KeyWait("Space")
+        KeyWait("F13")
     } finally {
         DllCall("SystemParametersInfo", "UInt", 0x71, "UInt", 0, "Ptr", speed, "UInt", 0)
     }
