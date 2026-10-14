@@ -18,8 +18,10 @@ F13 & s::Send("{Blind}{PgDn}") ; PageDown
 F13 & f::Send("{Blind}!+f") ; Alt + Shift + f: コードのフォーマット
 
 ; Lockキー
+#HotIf GetKeyState("Shift", "P")
 F13 & c::Send("{Blind}{CapsLock}")
 F13 & n::Send("{Blind}{NumLock}")
+#HotIf
 
 ; ブラウザ
 F13 & ,::Send("{Blind}!{Left}")  ; Alt + ←: 前のページ
